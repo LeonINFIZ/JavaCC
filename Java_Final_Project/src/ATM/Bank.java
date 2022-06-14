@@ -5,21 +5,21 @@ import java.util.ArrayList;
 public class Bank {
 
 
-    private static ArrayList <String> login;
-    private static ArrayList <String> password;
+    public static ArrayList <Integer> login = new ArrayList<>();
+    public static ArrayList <Integer> password = new ArrayList<>();
 
-    public static void setNewClient(String log, String pass)
+    public static void setNewClient(int log, int pass)
     {
         login.add(log);
         password.add(pass);
     }
 
-    public static boolean correctnessEnteredData(String log, String pass){
+    public static boolean correctnessEnteredData(int log, int pass){
 
         boolean logIsTrue = false;
-        for (String LOGIN : login)
+        for (int LOGIN : login)
         {
-            if(log.equals(LOGIN))
+            if(log==LOGIN)
             {
                 logIsTrue = true;
                 break;
@@ -28,9 +28,9 @@ public class Bank {
 
         if(logIsTrue)
         {
-            for (String PASS : password)
+            for (int PASS : password)
             {
-                if(pass.equals(PASS))
+                if(pass == PASS)
                 {
                     return true;
                 }
